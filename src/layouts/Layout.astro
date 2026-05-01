@@ -6,7 +6,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "Big Dipper - Handcrafted Ice Cream Since 1986" } = Astro.props;
+const { title, description = "Big Dipper Seymour - Handcrafted Ice Cream Since 1986" } = Astro.props;
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
@@ -24,7 +24,7 @@ const navLinks = [
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
-  <title>{title} | Big Dipper Ice Cream</title>
+  <title>{title} | Big Dipper Seymour Ice Cream</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍦</text></svg>" />
 </head>
 <body class="bg-cream-50 font-body text-chocolate antialiased">
@@ -114,7 +114,7 @@ const navLinks = [
 
         <!-- Brand -->
         <div>
-          <div class="font-script text-3xl text-cream mb-3">Big Dipper</div>
+          <div class="font-script text-3xl text-cream mb-3">Big Dipper Seymour</div>
           <p class="text-cream-200 text-sm leading-relaxed mb-5">
             Handcrafting happiness one scoop at a time since 1986. Made with love, and a whole lot of cream
           </p>
