@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm';
+import "../styles/global.css";
+---
+
+<Layout title="Contact Us" description="Get in touch with Big Dipper Ice Cream.">
+
+  <!-- Page Hero -->
+  <section class="relative h-60 flex items-end overflow-hidden bg-strawberry">
+    <div class="absolute inset-0 bg-sprinkle-pattern opacity-30"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 w-full">
+      <p class="font-script text-white/80 text-xl mb-1">We'd love to hear from you</p>
+      <h1 class="font-display text-5xl font-bold text-white">Contact Us</h1>
+    </div>
+    <svg class="absolute bottom-0 w-full" viewBox="0 0 1200 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,40 L0,20 C300,0 600,40 900,20 C1050,10 1150,30 1200,20 L1200,40 Z" fill="#fff8e8"/>
+    </svg>
+  </section>
+
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-16">
+
+      <!-- Contact Info Sidebar -->
+      <aside class="lg:col-span-2 space-y-8">
+        <div>
+          <h2 class="font-display text-2xl font-bold text-chocolate mb-6">Come in and Say Hello</h2>
+          <div class="space-y-5">
+            {[
+              {
+                icon: '',
+                title: 'Address',
+                lines: ['114 South Main St.', 'Seymour, CT 06483'],
+              },
+              {
+                icon: '',
+                title: 'Phone',
+                lines: ['(203) 999-0972'],
+              },
+            ].map(item => (
+              <div class="flex gap-4 items-start">
+                <div>
+                  <div class="font-display font-bold text-chocolate text-sm mb-0.5">{item.title}</div>
+                  {item.lines.map(l => <div class="font-body text-chocolate/70 text-sm">{l}</div>)}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Hours -->
+        <div class="bg-cream-100 rounded-3xl p-6 border border-cream-200">
+          <h3 class="font-display font-bold text-chocolate text-lg mb-4">Hours</h3>
+          <div class="space-y-2 text-sm font-body">
+            {[
+              { day: 'Monday - Friday', hours: '3:30 PM - 9:00 PM' },
+              { day: 'Saturday', hours: '12:00 PM - 9:00 PM' },
+              { day: 'Sunday', hours: '12:00 PM - 9:00 PM' },
+            ].map(h => (
+              <div class="flex justify-between">
+                <span class="text-chocolate/60">{h.day}</span>
+                <span class="font-semibold text-chocolate">{h.hours}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        
+      </aside>
+
+      <!-- Form -->
+      <div class="lg:col-span-3">
+        <div class="bg-white rounded-3xl p-8 shadow-sm border border-cream-200">
+          <h2 class="font-display text-2xl font-bold text-chocolate mb-2">Send Us a Message</h2>
+          <p class="font-body text-chocolate/60 text-sm mb-8">
+            Whether it's a question, a catering inquiry, or just to say hi — we read every message and respond within one business day.
+          </p>
+          <ContactForm client:load />
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section class="py-10 flex flex-col items-center justify-center px-4">
+    <div class="w-full max-w-6xl rounded-3xl overflow-hidden shadow-md border border-cream-200 bg-cream-100">
+      <div class="relative w-full aspect-video md:aspect-[16/6]">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2668.4720551530772!2d-72.9883938!3d41.5163236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e7c6ac18428f49%3A0x2607cd9d18c5baf3!2sThe%20Big%20Dipper%20Ice%20Cream%20Parlour%20%EF%B8%8F-%20Prospect!5e1!3m2!1sen!2sus!4v1776195794943!5m2!1sen!2sus" 
+          class="absolute top-0 left-0 w-full h-full border-0"
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+</Layout>

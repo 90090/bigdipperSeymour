@@ -1,11 +1,255 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import "../styles/global.css";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Home">
+
+    <!-- ═══════════════════════════════════════════════
+       HERO SECTION
+  ══════════════════════════════════════════════════ -->
+  <style>
+    @keyframes heroFadeUp {
+      0%   { opacity: 0; transform: translateY(24px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .hero-fade { opacity: 0; animation: heroFadeUp 0.7s ease-out forwards; }
+ 
+    @keyframes heroFloat {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-12px); }
+    }
+    .hero-float          { animation: heroFloat 6s ease-in-out infinite; }
+    .hero-float-delayed  { animation: heroFloat 6s ease-in-out 2s infinite; }
+  </style>
+ 
+  <section class="relative flex items-center overflow-hidden" style="height:100svh; min-height:600px; max-height:900px;">
+ 
+    <!-- Hero Image -->
+    <div class="absolute inset-0">
+      <img
+        src="./Hero.jpg"
+        alt="Big Dipper Ice Cream Shop exterior"
+        class="w-full h-full object-cover object-center"
+      />
+      <!-- Dark left-side overlay so text is always readable -->
+      <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(92,51,23,0.80) 0%, rgba(92,51,23,0.45) 50%, transparent 100%);"></div>
+      <!-- Bottom fade into page background -->
+      <div class="absolute bottom-0 left-0 right-0" style="height:10rem; background: linear-gradient(to top, #fff8e8, transparent);"></div>
+    </div>
+ 
+    <!-- Hero Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div style="max-width:36rem;">
+ 
+        <p
+          class="hero-fade font-script text-4xl mb-2"
+          style="color:#ffe49a; animation-delay:0.1s;"
+        >
+          Handcrafted since 1986
+        </p>
+ 
+        <h1
+          class="hero-fade font-display font-bold text-white leading-none mb-6"
+          style="font-size:clamp(2.8rem,7vw,4.5rem); animation-delay:0.25s;"
+        >
+          Life is<br/>
+          <span style="color:#ffe49a; font-style:italic;">sweeter</span><br/>
+          with Big Dipper.
+        </h1>
+ 
+        <p
+          class="hero-fade font-body text-xl mb-8 leading-relaxed"
+          style="color:#ffefc4; animation-delay:0.4s;"
+        >
+          Over 50 flavors made in small batches with fresh dairy sourced from Kingdom Creamery in Vermont. Come in and taste the difference.
+        </p>
+ 
+        <div class="hero-fade flex flex-wrap gap-4" style="animation-delay:0.55s;">
+          <a
+            href="/order"
+            style="display:inline-flex; align-items:center; gap:0.5rem; background:#e8688a; color:#fff; font-weight:700; padding:0.75rem 2rem; border-radius:9999px; box-shadow:0 4px 14px rgba(232,104,138,0.4); text-decoration:none; transition:all 0.2s; font-family:'Playfair Display',Georgia,serif;"
+            onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(232,104,138,0.5)';"
+            onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 14px rgba(232,104,138,0.4)';"
+          >
+            Order Online
+          </a>
+          <a
+            href="/about"
+            style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(255,255,255,0.18); backdrop-filter:blur(8px); color:#fff; border:2px solid rgba(255,255,255,0.45); font-weight:700; padding:0.75rem 2rem; border-radius:9999px; text-decoration:none; transition:all 0.2s; font-family:'Playfair Display',Georgia,serif;"
+            onmouseover="this.style.background='rgba(255,255,255,0.28)';"
+            onmouseout="this.style.background='rgba(255,255,255,0.18)';"
+          >
+            Our Story
+          </a>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Scroll hint -->
+    <div class="absolute left-1/2 flex flex-col items-center gap-1" style="bottom:2.5rem; transform:translateX(-50%); color:rgba(255,255,255,0.55); animation:bounce 1s infinite;">
+      <span style="font-size:0.65rem; text-transform:uppercase; letter-spacing:0.15em;">Scroll</span>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M10 14l-6-6h12l-6 6z"/></svg>
+    </div>
+  </section>
+    <!-- CTA BAND -->
+  <style>
+    @keyframes ctaPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
+      50%       { box-shadow: 0 0 0 16px rgba(255,255,255,0); }
+    }
+    .cta-pulse-btn { animation: ctaPulse 2.4s ease-in-out infinite; }
+    @keyframes ctaSlideIn {
+      0%   { opacity:0; transform: translateY(20px); }
+      100% { opacity:1; transform: translateY(0); }
+    }
+    .cta-card-inner { animation: ctaSlideIn 0.6s ease-out 0.2s both; }
+  </style>
+ 
+    <!-- CTA BAND -->
+  <style>
+    @keyframes ctaPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
+      50%       { box-shadow: 0 0 0 16px rgba(255,255,255,0); }
+    }
+    .cta-pulse-btn { animation: ctaPulse 2.4s ease-in-out infinite; }
+    @keyframes ctaSlideIn {
+      0%   { opacity:0; transform: translateY(20px); }
+      100% { opacity:1; transform: translateY(0); }
+    }
+    .cta-card-inner { animation: ctaSlideIn 0.6s ease-out 0.2s both; }
+    .cta-order-btn:hover { transform: scale(1.06); background: #fff8e8 !important; }
+  </style>
+ 
+  <section class="bg-strawberry relative overflow-hidden px-6 py-14">
+ 
+ 
+    <!-- Content -->
+    <div class="cta-card-inner relative z-10 max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-8">
+ 
+      <!-- Left: copy -->
+      <div class="flex-1 min-w-[260px]">
+        <p class="font-script text-white/80 text-xl mb-1">Skip the line. Beat the heat.</p>
+        <h2 class="font-display font-bold text-white leading-tight mb-3" style="font-size:clamp(1.8rem,4vw,2.5rem);">
+          Order ahead &amp; pick up fresh.
+        </h2>
+        <p class="font-body text-white/90 text-base leading-relaxed max-w-xl text-xl">
+          Choose your flavors online — we'll have them perfectly scooped and ready the moment you walk in.
+        </p>
+ 
+        <!-- Trust badges -->
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="font-body font-bold text-xs text-white bg-white/[0.18] backdrop-blur-sm border border-white/30 px-3 py-1.5 rounded-full">No payment needed upfront</span>
+          <span class="font-body font-bold text-xs text-white bg-white/[0.18] backdrop-blur-sm border border-white/30 px-3 py-1.5 rounded-full">Confirmation email sent</span>
+        </div>
+      </div>
+ 
+      <!-- Right: button -->
+      <div class="flex flex-col items-center gap-3 flex-shrink-0">
+        <a
+          href="/order"
+          class="cta-pulse-btn cta-order-btn inline-flex items-center gap-2 bg-white text-strawberry font-display font-extrabold text-xl px-11 py-4 rounded-full no-underline transition-all duration-200 whitespace-nowrap"
+        >
+          Order Now
+        </a>
+        <span class="font-body text-xs text-white/60">Free &middot; In-store pickup only</span>
+      </div>
+ 
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       WHY US SECTION
+  ══════════════════════════════════════════════════ -->
+  <section class="bg-waffle-pattern py-24 bg-cream-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="font-script text-strawberry text-2xl mb-2">Why We're Different</p>
+          <h2 class="font-display text-4xl sm:text-5xl font-bold text-chocolate mb-6">
+            Made fresh,<br/><span class="italic text-strawberry">every single day.</span>
+          </h2>
+          <p class="font-body text-chocolate/80 text-lg leading-relaxed mb-8">
+            Newly established expansion to the classic Big Dipper experience in 2026. Crafted with quality ingredients, bringing you traditional and seasonal flavors with recipes handed down through two generations.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { icon: '', title: 'Local Dairy', desc: 'Sourced From Kingdom Creamery, Vermont' },
+              { icon: '', title: 'Seasonal Flavors', desc: 'Changes with the harvest' },
+              { icon: '', title: 'No Artificial Anything', desc: 'Serving Our Community for Over 40 Years' },
+              { icon: '', title: 'Vegan & No Sugar Added Options', desc: 'Vegan and Non Sugar Ice Cream Available' },
+            ].map(item => (
+              <div class="flex gap-3 items-start bg-white/60 rounded-2xl p-4">
+                <span class="text-3xl">{item.icon}</span>
+                <div>
+                  <div class="font-display font-bold text-chocolate text-sm">{item.title}</div>
+                  <div class="font-body text-chocolate/60 text-xs mt-0.5">{item.desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <a href="/about" class="btn-secondary mt-8 inline-flex">
+            Read Our Full Story
+          </a>
+        </div>
+
+        <!-- Photo collage -->
+        <div class="relative h-110 lg:h-auto">
+          <div class="grid grid-cols-2 gap-3 h-full">
+            <img
+              src="./icecream2.jpg"
+              alt="Ice cream scoops"
+              class="rounded-3xl object-cover w-full h-56 lg:h-72 shadow-lg"
+            />
+            <img
+              src="./icecreampic.png"
+              alt="Ice cream sundae"
+              class="rounded-3xl object-cover w-full h-56 lg:h-72 shadow-lg mt-8"
+            />
+            <img
+              src="./cakepic.jpg"
+              alt="Making ice cream"
+              class="rounded-3xl object-cover w-full h-70 shadow-lg -mt-4"
+            />
+            <img
+              src="./piepic.jpg"
+              alt="Ice cream cone"
+              class="rounded-3xl object-cover w-full h-44 lg:h-52 shadow-lg mt-4"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       TESTIMONIALS
+  ══════════════════════════════════════════════════ -->
+  <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <p class="font-script text-strawberry text-4xl mb-1">Happy Customers</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {[
+        { name: "Shane Sciongay ", quote: "Loved there ice cream went with my girlfriend perfect lil spot to enjoy some quality time.... Absolutely recommend", rating: 5 },
+        { name: "Eddy B", quote: "Best ice cream in the area no doubt", rating: 5 },
+        { name: "Rondrea Douglas", quote: "My kids love the shakes...I do too. The ice cream is so fresh and tasty.", rating: 5 },
+      ].map(t => (
+        <div class="bg-white rounded-3xl p-8 shadow-md border border-cream-200 relative">
+          <div class="absolute -top-4 left-8 text-5xl opacity-20 font-serif text-strawberry select-none">&ldquo;</div>
+          <div class="flex mb-4">
+            {Array(t.rating).fill(null).map(() => <span class="text-cream-500 text-lg">★</span>)}
+          </div>
+          <p class="font-body text-chocolate/80 italic leading-relaxed mb-6">{t.quote}</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-strawberry/20 rounded-full flex items-center justify-center text-strawberry font-display font-bold">
+              {t.name[0]}
+            </div>
+            <span class="font-display font-semibold text-chocolate">{t.name}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
 </Layout>

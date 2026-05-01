@@ -1,0 +1,174 @@
+---
+import Layout from '../layouts/Layout.astro';
+import "../styles/global.css";
+---
+
+<Layout title="About Us" description="Learn the story of Big Dipper Ice Cream — family-owned and handcrafted since 1986.">
+
+  <!-- Page Hero -->
+  <section class="relative h-60 flex items-end overflow-hidden bg-strawberry">
+    <div class="absolute inset-0 bg-sprinkle-pattern opacity-30"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 w-full">
+      <p class="font-script text-white/80 text-xl mb-1">Our Story</p>
+      <h1 class="font-display text-5xl font-bold text-white">About Us</h1>
+    </div>
+    <svg class="absolute bottom-0 w-full" viewBox="0 0 1200 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,40 L0,20 C300,0 600,40 900,20 C1050,10 1150,30 1200,20 L1200,40 Z" fill="#fff8e8"/>
+    </svg>
+  </section>
+
+
+  <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      
+      <!-- LEFT: TEXT -->
+      <div>
+        <h2 class="font-display text-4xl font-bold text-chocolate mb-6">
+          A new building <span class="italic text-strawberry">same great ice cream.</span>
+        </h2>
+
+        <div class="space-y-5 font-body text-chocolate/80 text-lg leading-relaxed text-base">
+          <p>
+            The Turel Whittemore Tavern, dating back to the 1740s, was part of early Seymour when travel happened by horse and carriage and taverns were the heart of the community. Places like this weren't just for food and drink—they were gathering spots where locals met, travelers rested, and news was shared.
+          </p>
+          <p>
+            It was acquired around 1778 by E. Turel Whittemore and served as a tavern. At that point, the building was only one story high. The second story was added in 1867 by Martin Castle, who dismantled the building's old chimney and used the stones to construct the terraced wall in front of the property. On the northwest corner of the old tavern was a barroom, where in 1780 a group of Torries planned the robbery of the home of the Patriot, Capt. Ebenezer Dayton, which was located in Bethany.
+          </p>
+          <p>
+            This infamous incident led to the dramatic kidnapping, in nearby Oxford, of the Patriot boy, Chauncey Judd, a 16-year-old member of the Oxford militia, who ran into the fleeing robbers. They were later captured and sent to Newgate Prison and Judd was freed. Since then, the Tavern has housed several businesses, including an ice cream shoppe for the last 15+ years. From a historic tavern… to The Big Dipper.
+          </p>
+        </div>
+      </div>
+
+      <!-- RIGHT: STACKED IMAGES -->
+      <div class="flex flex-col gap-6">
+        
+        <div class="relative">
+          <img
+            src="./harrysrabout.jpg"
+            alt="Historic ice cream shop"
+            class="rounded-3xl shadow-2xl w-full object-cover h-72 lg:h-80"
+          />
+        </div>
+
+        <div class="relative">
+          <img
+            src="./harryandmom.jpg"
+            alt="Harry and Barbara"
+            class="rounded-3xl shadow-2xl w-full object-cover h-150"
+          />
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       THE BUILDING
+  ══════════════════════════════════════════════════ -->
+  <section class="bg-cream-100 bg-waffle-pattern py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <p class="font-script text-strawberry text-2xl mb-1">Our Home</p>
+        <h2 class="font-display text-4xl font-bold text-chocolate">The Building</h2>
+        <div class="w-20 h-1 bg-strawberry rounded-full mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-14">
+        <img
+          src="./Hero.jpg"
+          alt="Harry and Barabra Rowe, founders of The Big Dipper"
+          class="rounded-3xl shadow-lg object-cover w-full h-110 col-span-1 lg:col-span-2"
+        />
+        <img
+          src="./harryandbarbara.jpg"
+          alt="Shop detail"
+          class="rounded-3xl shadow-lg object-cover h-110 w-full"
+        />
+      </div>
+
+      <!-- <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div class="space-y-5 font-body text-chocolate/80 leading-relaxed">
+          <p>
+            The building at 123 Sweet Street was constructed in 1924 as a soda fountain and five-and-dime shop. Its original pressed tin ceilings, black-and-white hexagonal tile floor, and the long marble counter top along the east wall have all been lovingly preserved — and still greet customers every single day.
+          </p>
+          <p>
+            During a 1995 renovation, George discovered original blueprints and soda fountain menus from the 1930s tucked behind a wall panel. Those menus now hang framed in the back dining room, a testament to the building's sweet heritage.
+          </p>
+          <p>
+            The pink-and-white striped awning — a landmark recognized by nearly everyone in town — was installed in 1980 and has been faithfully restored every decade since. The neon "ICE CREAM" sign in the window dates to 1983 and still glows every evening at dusk.
+          </p>
+        </div>
+        <div class="space-y-5 font-body text-chocolate/80 leading-relaxed">
+          <p>
+            In 2010, the Whitmore family undertook a major kitchen expansion, adding a proper production space behind the original shop where all 40+ flavors are now made fresh each morning. Visitors are often treated to the sight — and smell — of fresh batches being pulled from the churners through the large glass viewing window.
+          </p>
+          <p>
+            The building was added to the local historic registry in 2018, and the family continues to steward it with the same care they put into every scoop. Today, George and Eleanor's daughter, Caroline, runs the day-to-day operation, with the third generation of Whitmores already spending summers behind the counter.
+          </p>
+        </div>
+      </div> -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       TIMELINE
+  ══════════════════════════════════════════════════ -->
+  <!-- <section class="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <p class="font-script text-strawberry text-2xl mb-1">Through the Years</p>
+      <h2 class="font-display text-4xl font-bold text-chocolate">Our Milestones</h2>
+    </div>
+
+    <div class="relative">
+      <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-cream-300 hidden sm:block"></div>
+
+      <div class="space-y-10">
+        {[
+          { year: '1978', title: 'Grand Opening', desc: 'Eleanor and George Whitmore open the doors with 12 flavors and a dream.' },
+          { year: '1980', title: 'The Iconic Awning', desc: 'The now-famous pink-and-white striped awning is installed.' },
+          { year: '1982', title: 'Big Expansion', desc: 'The shop expands next door; fresh waffle cones debut — and become an instant obsession.' },
+          { year: '1983', title: 'Neon Dreams', desc: 'The original neon sign is installed and still glows to this day.' },
+          { year: '1995', title: 'A Hidden Discovery', desc: 'Original 1930s soda fountain menus found during renovations are now on display.' },
+          { year: '2010', title: 'Production Kitchen', desc: 'New production space opens with viewing window — 40+ flavors made fresh daily.' },
+          { year: '2018', title: 'Historic Registry', desc: 'The building is officially added to the local historic registry.' },
+          { year: '2023', title: 'Third Generation', desc: 'The Whitmore grandchildren start their first summers behind the counter.' },
+        ].map((item, i) => (
+          <div class="flex gap-6 sm:pl-16 relative">
+            <div class="absolute left-0 top-1 w-12 h-12 bg-strawberry rounded-full flex items-center justify-center text-white font-display font-bold text-xs text-center leading-tight shadow-md hidden sm:flex">
+              {item.year}
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-cream-200 flex-1">
+              <div class="sm:hidden text-xs font-bold text-strawberry uppercase tracking-widest mb-1">{item.year}</div>
+              <h3 class="font-display font-bold text-chocolate text-lg mb-1">{item.title}</h3>
+              <p class="font-body text-chocolate/70 text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ═══════════════════════════════════════════════
+       TEAM / PHOTO GALLERY
+  ══════════════════════════════════════════════════ -->
+  <section class="bg-strawberry py-16 text-center">
+    <div class="max-w-3xl mx-auto px-4">
+      <p class="font-script text-white/80 text-2xl mb-2">Come say hello</p>
+      <h2 class="font-display text-3xl font-bold text-white mb-4">We'd love to meet you</h2>
+      <p class="font-body text-white/90 leading-relaxed mb-8">
+        Whether you're a first-timer or a 40-year regular, every guest gets the same warm welcome and the same care in every scoop. Stop in and see for yourself.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/order" class="inline-flex items-center gap-2 bg-white text-strawberry font-display font-bold px-8 py-3 rounded-full shadow-lg hover:-translate-y-0.5 transition-all">
+          Order Online
+        </a>
+        <a href="/contact" class="inline-flex items-center gap-2 bg-white/20 text-white border-2 border-white/40 font-display font-bold px-8 py-3 rounded-full hover:bg-white/30 transition-all">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

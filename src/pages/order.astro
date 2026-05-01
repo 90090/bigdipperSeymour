@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import OrderForm from '../components/OrderForm';
+import "../styles/global.css";
+---
+
+<Layout title="Order Online" description="Order your favorite Scoops & Smiles ice cream online for pickup.">
+
+  <!-- Page Hero -->
+  <section class="relative h-60 flex items-end overflow-hidden bg-strawberry">
+    <div class="absolute inset-0 bg-sprinkle-pattern opacity-30"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 w-full">
+      <p class="font-script text-white/80 text-xl mb-1">Ready when you are</p>
+      <h1 class="font-display text-5xl font-bold text-white">Order Online</h1>
+    </div>
+    <svg class="absolute bottom-0 w-full" viewBox="0 0 1200 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,40 L0,20 C300,0 600,40 900,20 C1050,10 1150,30 1200,20 L1200,40 Z" fill="#fff8e8"/>
+    </svg>
+  </section>
+
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Info Banner -->
+    <div class="bg-cream-100 border-2 border-cream-300 rounded-3xl p-6 mb-12 flex flex-wrap gap-6 justify-around text-center">
+      {[
+        { icon: '', title: '72 Hours Notice', desc: 'Minimum for all orders' },
+        { icon: '', title: 'In-Store Pickup', desc: '114 South Main St, Seymour, CT 06483' },
+        { icon: '', title: 'Confirmation Email', desc: 'Sent immediately' },
+        { icon: '', title: 'Questions?', desc: '(203) 999-0972' },
+      ].map(item => (
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-3xl">{item.icon}</span>
+          <span class="font-display font-bold text-chocolate text-sm">{item.title}</span>
+          <span class="font-body text-chocolate/60 text-xs">{item.desc}</span>
+        </div>
+      ))}
+    </div>
+
+    <!-- React Order Form -->
+    <OrderForm client:load />
+  </section>
+
+</Layout>

@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+  /* This maps your custom colors to Tailwind utilities */
+  --color-cream: #fff8e8;
+  --color-pink: #e8688a;
+  --color-strawberry: #e8688a; /* Adding alias since you used both names */
+  --color-gold: #d97706;
+  --color-chocolate: #5c3317;
+  --color-mint: #4ade80;
+
+  /* Since v4 is variable-first, define specific shades if you need them */
+  --color-cream-200: #fdf2d7; 
+  --color-cream-400: #f9e2af;
+
+  /* Font mappings */
+  --font-display: "Playfair Display", serif;
+  --font-body: "Lato", sans-serif;
+  --font-script: "Dancing Script", cursive;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Use the theme variable Tailwind created */
+  background-color: var(--color-cream);
+  font-family: var(--font-body);
+}
+
+/* Drip effect utility */
+.drip-border {
+  position: relative;
+}
+.drip-border::after {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 C100,0 100,20 200,20 C300,20 300,0 400,0 C500,0 500,20 600,20 C700,20 700,0 800,0 C900,0 900,20 1000,20 C1100,20 1100,0 1200,0 L1200,0 L0,0 Z' fill='%23e8688a'/%3E%3C/svg%3E") repeat-x;
+  background-size: 200px 20px;
+}
+
+/* Scallop top border */
+.scallop-top {
+  position: relative;
+}
+.scallop-top::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 0;
+  right: 0;
+  height: 18px;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 18' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,18 C50,18 50,0 100,0 C150,0 150,18 200,18 C250,18 250,0 300,0 C350,0 350,18 400,18 C450,18 450,0 500,0 C550,0 550,18 600,18 C650,18 650,0 700,0 C750,0 750,18 800,18 C850,18 850,0 900,0 C950,0 950,18 1000,18 C1050,18 1050,0 1100,0 C1150,0 1150,18 1200,18 Z' fill='%23fff8e8'/%3E%3C/svg%3E") repeat-x;
+  background-size: 200px 18px;
+  z-index: 10;
+}
+
+/* Form input styles */
+.form-input {
+  @apply w-full px-4 py-3 rounded-2xl border-2 border-cream-200 bg-white/80 font-body text-chocolate placeholder-cream-400 focus:outline-none focus:border-strawberry transition-colors duration-200;
+}
+
+.form-label {
+  /* Note: font-700 becomes font-bold or you can use standard weights */
+  @apply block font-body font-bold text-chocolate mb-1 text-sm uppercase tracking-wider;
+}
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 bg-strawberry text-white font-display font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 cursor-pointer;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center gap-2 bg-white text-strawberry border-2 border-strawberry font-display font-semibold px-8 py-3 rounded-full shadow-md hover:bg-strawberry hover:text-white transition-all duration-200 cursor-pointer;
+}
+
+/* Wavy divider */
+.wave-divider {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+/* Nav active state */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 80%;
+  height: 2px;
+  background: var(--pink);
+  border-radius: 1px;
+  transition: transform 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Card hover */
+.flavor-card {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+.flavor-card:hover {
+  transform: translateY(-8px) rotate(1deg);
+  box-shadow: 0 20px 40px rgba(92, 51, 23, 0.2);
+}
+
+/* Checkbox / radio custom */
+input[type="checkbox"]:checked {
+  accent-color: var(--pink);
+}
+input[type="radio"]:checked {
+  accent-color: var(--pink);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--pink); border-radius: 4px; }
