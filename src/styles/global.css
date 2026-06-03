@@ -7,6 +7,7 @@
   --color-cream: #fff8e8;
   --color-pink: #e8688a;
   --color-strawberry: #e8688a; /* Adding alias since you used both names */
+  --color-bdteal: #069494;
   --color-gold: #d97706;
   --color-chocolate: #5c3317;
   --color-mint: #4ade80;
@@ -74,11 +75,11 @@ body {
 }
 
 .btn-primary {
-  @apply inline-flex items-center gap-2 bg-strawberry text-white font-display font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 cursor-pointer;
+  @apply inline-flex items-center gap-2 bg-bdteal text-white font-display font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 cursor-pointer;
 }
 
 .btn-secondary {
-  @apply inline-flex items-center gap-2 bg-white text-strawberry border-2 border-strawberry font-display font-semibold px-8 py-3 rounded-full shadow-md hover:bg-strawberry hover:text-white transition-all duration-200 cursor-pointer;
+  @apply inline-flex items-center gap-2 bg-white text-bdteal border-2 border-bdteal font-display font-semibold px-8 py-3 rounded-full shadow-md hover:bg-bdteal hover:text-white transition-all duration-200 cursor-pointer;
 }
 
 /* Wavy divider */

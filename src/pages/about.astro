@@ -6,7 +6,7 @@ import "../styles/global.css";
 <Layout title="About Us" description="Learn the story of Big Dipper Ice Cream — family-owned and handcrafted since 1986.">
 
   <!-- Page Hero -->
-  <section class="relative h-60 flex items-end overflow-hidden bg-strawberry">
+  <section class="relative h-60 flex items-end overflow-hidden bg-bdteal">
     <div class="absolute inset-0 bg-sprinkle-pattern opacity-30"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 w-full">
       <p class="font-script text-white/80 text-xl mb-1">Our Story</p>
@@ -18,16 +18,65 @@ import "../styles/global.css";
   </section>
 
 
-  <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+  <section class="py-5 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  
+    <!-- TOP ROW -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-10">
       
       <!-- LEFT: TEXT -->
       <div>
         <h2 class="font-display text-4xl font-bold text-chocolate mb-6">
-          A new building <span class="italic text-strawberry">same great ice cream.</span>
+          Another location, <span class="italic text-bdteal">same great ice cream.</span>
         </h2>
 
-        <div class="space-y-5 font-body text-chocolate/80 text-lg leading-relaxed text-base">
+        <div class="space-y-5 font-body text-chocolate/80 text-lg leading-relaxed">
+          <p>
+            The Big Dipper Ice Cream Parlour was founded in Prospect, CT in 1986 by Harry Rowe Jr and his wife, Barbara. The original store was located at 52 Waterbury Road and is now at 91 Waterbury Road, Prospect.
+          </p>
+
+          <p>
+            Now operated by their son Harry Rowe, III, the Big Dipper continues the tradition with over 50 rotating flavors and has won countless awards. The Big Dipper homestyle ice cream is freshly made on the premises in small batches. Their milk is sourced from Kingdom Creamery, a 4th Generation farm in upstate Vermont. This ensures a top quality product every time a customer visits. Adam, is also the owner of Inner City Electrical in Prospect since 2011, a family owned company. Adam brings a wealth of knowledge to the Big Dipper of Seymour and excited to add new additions to the menu.
+          </p>
+
+          <p>
+            The Big Dipper is celebrating its 40th season this year and is excited to continue Harry and Barbara Rowe's tradition by joining the Seymour community with their second location. Harry is joined by his friend and business partner, Adam Kielcewski, who also shares the same passion for connecting people through their love of ice cream.
+          </p>
+        </div>
+      </div>
+
+      <!-- RIGHT: IMAGE -->
+      <div class="relative">
+        <img
+          src="./Owners.png"
+          alt="The owners of The Big Dipper"
+          class="rounded-3xl shadow-2xl w-full object-cover h-80 lg:h-[32rem]"
+        />
+      </div>
+
+    </div>
+
+    <!-- BOTTOM BANNER IMAGE -->
+    <div class="relative">
+      <img
+        src="./hero.JPG"
+        alt="Exterior of The Big Dipper Seymour"
+        class="rounded-3xl shadow-2xl w-full object-cover h-72 lg:h-[42rem]"
+      />
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       THE BUILDING
+  ══════════════════════════════════════════════════ -->
+  <section class="bg-cream-100 bg-waffle-pattern py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <p class="font-script text-bdteal text-2xl mb-1">Our Home</p>
+        <h2 class="font-display text-4xl font-bold text-chocolate">The Building</h2>
+        <div class="w-20 h-1 bg-bdteal rounded-full mx-auto mt-4"></div>
+      </div>
+      <div class="space-y-5 font-body text-chocolate/80 text-lg leading-relaxed text-base">
           <p>
             The Turel Whittemore Tavern, dating back to the 1740s, was part of early Seymour when travel happened by horse and carriage and taverns were the heart of the community. Places like this weren't just for food and drink—they were gathering spots where locals met, travelers rested, and news was shared.
           </p>
@@ -38,51 +87,15 @@ import "../styles/global.css";
             This infamous incident led to the dramatic kidnapping, in nearby Oxford, of the Patriot boy, Chauncey Judd, a 16-year-old member of the Oxford militia, who ran into the fleeing robbers. They were later captured and sent to Newgate Prison and Judd was freed. Since then, the Tavern has housed several businesses, including an ice cream shoppe for the last 15+ years. From a historic tavern… to The Big Dipper.
           </p>
         </div>
-      </div>
 
-      <!-- RIGHT: STACKED IMAGES -->
-      <div class="flex flex-col gap-6">
-        
-        <div class="relative">
-          <img
-            src="./harrysrabout.jpg"
-            alt="Historic ice cream shop"
-            class="rounded-3xl shadow-2xl w-full object-cover h-72 lg:h-80"
-          />
-        </div>
-
-        <div class="relative">
-          <img
-            src="./harryandmom.jpg"
-            alt="Harry and Barbara"
-            class="rounded-3xl shadow-2xl w-full object-cover h-150"
-          />
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-       THE BUILDING
-  ══════════════════════════════════════════════════ -->
-  <section class="bg-cream-100 bg-waffle-pattern py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-14">
-        <p class="font-script text-strawberry text-2xl mb-1">Our Home</p>
-        <h2 class="font-display text-4xl font-bold text-chocolate">The Building</h2>
-        <div class="w-20 h-1 bg-strawberry rounded-full mx-auto mt-4"></div>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-14">
+      <div class="py-5 grid grid-cols-1 lg:grid-cols-3 gap-8 mb-14">
         <img
-          src="./Hero.jpg"
+          src="./inside.JPG"
           alt="Harry and Barabra Rowe, founders of The Big Dipper"
           class="rounded-3xl shadow-lg object-cover w-full h-110 col-span-1 lg:col-span-2"
         />
         <img
-          src="./harryandbarbara.jpg"
+          src="./entrance.JPG"
           alt="Shop detail"
           class="rounded-3xl shadow-lg object-cover h-110 w-full"
         />
@@ -153,7 +166,7 @@ import "../styles/global.css";
   <!-- ═══════════════════════════════════════════════
        TEAM / PHOTO GALLERY
   ══════════════════════════════════════════════════ -->
-  <section class="bg-strawberry py-16 text-center">
+  <section class="bg-bdteal py-16 text-center">
     <div class="max-w-3xl mx-auto px-4">
       <p class="font-script text-white/80 text-2xl mb-2">Come say hello</p>
       <h2 class="font-display text-3xl font-bold text-white mb-4">We'd love to meet you</h2>
@@ -161,7 +174,7 @@ import "../styles/global.css";
         Whether you're a first-timer or a 40-year regular, every guest gets the same warm welcome and the same care in every scoop. Stop in and see for yourself.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="/order" class="inline-flex items-center gap-2 bg-white text-strawberry font-display font-bold px-8 py-3 rounded-full shadow-lg hover:-translate-y-0.5 transition-all">
+        <a href="/order" class="inline-flex items-center gap-2 bg-white text-bdteal font-display font-bold px-8 py-3 rounded-full shadow-lg hover:-translate-y-0.5 transition-all">
           Order Online
         </a>
         <a href="/contact" class="inline-flex items-center gap-2 bg-white/20 text-white border-2 border-white/40 font-display font-bold px-8 py-3 rounded-full hover:bg-white/30 transition-all">

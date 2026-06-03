@@ -44,6 +44,7 @@ export default {
         strawberry: '#e8688a',
         chocolate: '#5c3317',
         pistachio: '#93c572',
+        bdteal: '#069494',
       },
       fontFamily: {
         display: ['"Playfair Display"', 'Georgia', 'serif'],
