@@ -1,12 +1,20 @@
 ---
 import '../styles/global.css';
-
+import SEO from '../components/SEO.astro';
+ 
 interface Props {
   title: string;
   description?: string;
+  image?: string;
+  noindex?: boolean;
 }
 
-const { title, description = "Big Dipper of Seymour - Handcrafted Ice Cream Since 1986" } = Astro.props;
+const {
+  title,
+  description = 'Family-owned ice cream parlour in Seymour, CT. Over 50 homestyle flavors made fresh daily, plus cakes, pies, and UFOs. Voted Best Ice Cream for 20 years.',
+  image,
+  noindex = false,
+} = Astro.props;
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
@@ -23,10 +31,16 @@ const navLinks = [
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content={description} />
-  <title>{title} | Big Dipper of Seymour Ice Cream</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍦</text></svg>" />
+  <SEO
+    title={title}
+    description={description}
+    image={image}
+    noindex={noindex}
+    canonicalURL={Astro.url.href}
+  />
 </head>
+
 <body class="bg-cream-50 font-body text-chocolate antialiased">
 
   <!-- Navigation -->
