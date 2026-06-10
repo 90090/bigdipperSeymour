@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react';
 
-const LAMBDA_URL = 'https://YOUR_LAMBDA_URL.amazonaws.com/prod/send-order';
+const LAMBDA_URL = 'https://vpi0fo77oh.execute-api.us-east-1.amazonaws.com/form'; // ← paste terraform output here
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
@@ -82,7 +82,7 @@ export default function ContactForm() {
 
       {status === 'error' && (
         <div className="bg-rose-50 border border-rose-200 rounded-2xl p-4 text-rose-700 text-sm">
-          ⚠️ {errorMsg}
+          {errorMsg}
         </div>
       )}
 

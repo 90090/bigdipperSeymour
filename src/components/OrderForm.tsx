@@ -3,7 +3,7 @@ import { useState, type FormEvent } from 'react';
 // ─────────────────────────────────────────────────────────────
 //  CONFIG
 // ─────────────────────────────────────────────────────────────
-const LAMBDA_URL        = 'https://YOUR_LAMBDA_URL.amazonaws.com/prod/send-order';
+const LAMBDA_URL = 'https://vpi0fo77oh.execute-api.us-east-1.amazonaws.com/form'; // ← paste terraform output here
 const BUSINESS_EMAIL    = 'orders@yourdomain.com'; // ← change to your business email
 
 const MIN_HOURS_CUSTOM  = 72;  // cake / pie
@@ -73,7 +73,7 @@ const ICE_SIZES: { value: IceCreamItem['size']; label: string }[] = [
 
 const PRODUCT_META: Record<ProductType, { emoji: string; label: string; color: string; border: string; badge: string; hoverBorder: string }> = {
   cake:     { emoji: '', label: 'Ice Cream Cake', color: 'bg-rose-50',   border: 'border-rose-200',   badge: 'bg-rose-100 text-rose-700',    hoverBorder: 'hover:border-rose-400' },
-  pie:      { emoji: '', label: 'Pie',  color: 'bg-amber-50',  border: 'border-amber-200',  badge: 'bg-amber-100 text-amber-700',  hoverBorder: 'hover:border-amber-400' },
+  pie:      { emoji: '', label: 'Ice Cream Pie',  color: 'bg-amber-50',  border: 'border-amber-200',  badge: 'bg-amber-100 text-amber-700',  hoverBorder: 'hover:border-amber-400' },
   icecream: { emoji: '', label: 'Ice Cream',      color: 'bg-sky-50',    border: 'border-sky-200',    badge: 'bg-sky-100 text-sky-700',      hoverBorder: 'hover:border-sky-400' },
   ufo:      { emoji: '', label: 'UFO',            color: 'bg-purple-50', border: 'border-purple-200', badge: 'bg-purple-100 text-purple-700', hoverBorder: 'hover:border-purple-400' },
 };
@@ -294,9 +294,9 @@ function UfoCard({ item, onChange }: { item: UfoItem; onChange: (p: Partial<UfoI
         <label className="form-label">UFO Flavor *</label>
         <div className="flex gap-2">
           {([
-            { value:'swirl',     label:'Swirl' },
-            { value:'chocolate', label:'Chocolate' },
-            { value:'vanilla',   label:'Vanilla' },
+            { value:'swirl',     label:'🌀 Swirl' },
+            { value:'chocolate', label:'🍫 Chocolate' },
+            { value:'vanilla',   label:'🍦 Vanilla' },
           ] as const).map(opt => (
             <button key={opt.value} type="button" onClick={() => onChange({ ufoFlavor: opt.value })}
               className={`flex-1 py-2.5 rounded-xl border-2 font-body text-sm font-bold transition-all ${
