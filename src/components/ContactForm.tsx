@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react';
 
-const LAMBDA_URL = 'https://vpi0fo77oh.execute-api.us-east-1.amazonaws.com/form'; // ← paste terraform output here
+const LAMBDA_URL = 'https://ufcz1f7y84.execute-api.us-east-1.amazonaws.com/form'; // ← paste terraform output here
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
