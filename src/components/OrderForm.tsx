@@ -643,7 +643,7 @@ export default function OrderForm() {
       </button>
  
       <p className="text-center text-xs text-chocolate/50 font-body pb-4">
-        A confirmation email will be sent to you immediately. Cakes &amp; Pies require 72 hours notice. Ice Cream &amp; UFOs require 2 hours.
+        A confirmation email will be sent to you immediately. All orders require 72 hours notice.
       </p>
     </form>
   );
