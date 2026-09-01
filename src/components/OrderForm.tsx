@@ -12,8 +12,8 @@ const MIN_HOURS_ICE     = 2;   // ice cream / ufo (unused in date field but note
 // ─────────────────────────────────────────────────────────────
 //  TYPES
 // ─────────────────────────────────────────────────────────────
-type ProductType = 'cake' | 'pie' | 'icecream' | 'ufo';
- 
+type ProductType = 'pie' | 'icecream' | 'ufo';
+ //'cake' | 
 interface RoundSize  { value: string; label: string; serves: string }
 interface SquareSize { value: string; label: string; serves: string }
  
@@ -54,8 +54,8 @@ interface UfoItem {
   quantity: number;
 }
  
-type OrderItem = CakeItem | PieItem | IceCreamItem | UfoItem;
- 
+type OrderItem =  PieItem | IceCreamItem | UfoItem;
+ //CakeItem |
 interface ContactInfo {
   firstName: string;
   lastName: string;
@@ -95,7 +95,7 @@ const ICE_SIZES: { value: IceCreamItem['size']; label: string }[] = [
 ];
  
 const PRODUCT_META: Record<ProductType, { label: string; color: string; border: string; badge: string; hoverBorder: string }> = {
-  cake:     { label: 'Ice Cream Cake', color: 'bg-rose-50',   border: 'border-rose-200',   badge: 'bg-rose-100 text-rose-700',    hoverBorder: 'hover:border-rose-400' },
+  // cake:     { label: 'Ice Cream Cake', color: 'bg-rose-50',   border: 'border-rose-200',   badge: 'bg-rose-100 text-rose-700',    hoverBorder: 'hover:border-rose-400' },
   pie:      { label: 'Pie',            color: 'bg-amber-50',  border: 'border-amber-200',  badge: 'bg-amber-100 text-amber-700',  hoverBorder: 'hover:border-amber-400' },
   icecream: { label: 'Ice Cream',      color: 'bg-sky-50',    border: 'border-sky-200',    badge: 'bg-sky-100 text-sky-700',      hoverBorder: 'hover:border-sky-400' },
   ufo:      { label: 'UFO',            color: 'bg-purple-50', border: 'border-purple-200', badge: 'bg-purple-100 text-purple-700', hoverBorder: 'hover:border-purple-400' },
@@ -118,29 +118,29 @@ const newPie  = (): PieItem      => ({ type: 'pie',      crust: 'graham', pieFla
 const newIce  = (): IceCreamItem => ({ type: 'icecream', flavor: '', size: 'pint', quantity: 1 });
 const newUfo  = (): UfoItem      => ({ type: 'ufo',      ufoFlavor: 'swirl', cookie: 'chocolate_wafer', sprinkles: 'no', quantity: 1 });
  
-const factories: Record<ProductType, () => OrderItem> = { cake: newCake, pie: newPie, icecream: newIce, ufo: newUfo };
- 
+const factories: Record<ProductType, () => OrderItem> = {  pie: newPie, icecream: newIce, ufo: newUfo };
+ //cake: newCake,
 function buildSummary(items: OrderItem[]): string {
   return items.map((item, i) => {
     const n = i + 1;
-    if (item.type === 'cake') {
-      const sizeLabel = item.cakeShape === 'Round'
-        ? (ROUND_SIZES.find(s => s.value === item.cakeSize)?.label ?? item.cakeSize)
-        : item.cakeShape === 'Square'
-        ? (SQUARE_SIZES.find(s => s.value === item.cakeSize)?.label ?? item.cakeSize)
-        : '';
-      return (
-        `Item ${n} — Ice Cream Cake x${item.quantity}\n` +
-        `  Shape: ${item.cakeShape}${sizeLabel ? ` (${sizeLabel})` : ''}\n` +
-        `  Ice Cream Flavor: ${item.iceCreamFlavor || 'Standard (Chocolate & Vanilla)'}\n` +
-        `  Center: ${item.cakeCenter || 'Standard (Cookie Crunch)'}\n` +
-        `  Trim Color: ${item.trimColor}\n` +
-        `  Flowers/Roses: ${item.flowers}\n` +
-        `  Chocolate Cookie Crumble: ${item.cookieCrumble}\n` +
-        `  Text on Cake: ${item.cakeText || '(none)'}\n` +
-        `  Date Needed: ${item.dateNeeded}`
-      );
-    }
+    // if (item.type === 'cake') {
+    //   const sizeLabel = item.cakeShape === 'Round'
+    //     ? (ROUND_SIZES.find(s => s.value === item.cakeSize)?.label ?? item.cakeSize)
+    //     : item.cakeShape === 'Square'
+    //     ? (SQUARE_SIZES.find(s => s.value === item.cakeSize)?.label ?? item.cakeSize)
+    //     : '';
+    //   return (
+    //     `Item ${n} — Ice Cream Cake x${item.quantity}\n` +
+    //     `  Shape: ${item.cakeShape}${sizeLabel ? ` (${sizeLabel})` : ''}\n` +
+    //     `  Ice Cream Flavor: ${item.iceCreamFlavor || 'Standard (Chocolate & Vanilla)'}\n` +
+    //     `  Center: ${item.cakeCenter || 'Standard (Cookie Crunch)'}\n` +
+    //     `  Trim Color: ${item.trimColor}\n` +
+    //     `  Flowers/Roses: ${item.flowers}\n` +
+    //     `  Chocolate Cookie Crumble: ${item.cookieCrumble}\n` +
+    //     `  Text on Cake: ${item.cakeText || '(none)'}\n` +
+    //     `  Date Needed: ${item.dateNeeded}`
+    //   );
+    // }
     if (item.type === 'pie') return (
       `Item ${n} — Ice Cream Pie x${item.quantity}\n` +
       `  Crust: ${item.crust === 'graham' ? 'Graham Cracker' : 'Chocolate'}\n` +
@@ -597,7 +597,7 @@ export default function OrderForm() {
                   </button>
                 </div>
                 <div className="p-5 bg-white">
-                  {item.type === 'cake'     && <CakeCard     item={item} onChange={p => updateItem(i, p)} />}
+                  {/* {item.type === 'cake'     && <CakeCard     item={item} onChange={p => updateItem(i, p)} />} */}
                   {item.type === 'pie'      && <PieCard      item={item} onChange={p => updateItem(i, p)} />}
                   {item.type === 'icecream' && <IceCreamCard item={item} onChange={p => updateItem(i, p)} />}
                   {item.type === 'ufo'      && <UfoCard      item={item} onChange={p => updateItem(i, p)} />}

@@ -56,8 +56,10 @@ import "../styles/global.css";
           <h3 class="font-display font-bold text-chocolate text-lg mb-4">Hours</h3>
           <div class="space-y-2 text-sm font-body">
             {[
-              { day: 'Monday - Friday', hours: '12:00 PM - 9:30 PM' },
-              { day: 'Saturday - Sunday', hours: '11:00 AM - 9:30 PM' },
+              { day: 'Monday - Thursday', hours: '3:00 PM - 9:00 PM' },
+              { day: 'Friday', hours: '3:00 PM - 9:30 PM' },
+              { day: 'Saturday', hours: '11:00 AM - 9:30 PM' },
+              { day: 'Sunday', hours: '11:00 AM - 9:00 PM' },
             ].map(h => (
               <div class="flex justify-between">
                 <span class="text-chocolate/60">{h.day}</span>
